@@ -5,8 +5,9 @@ from PIL import Image
 from .briarmbg import BriaRMBG
 from torchvision.transforms.functional import normalize
 import numpy as np
+import folder_paths
 
-current_directory = os.path.dirname(os.path.abspath(__file__))
+current_directory = folder_paths.models_dir
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 def tensor2pil(image):
