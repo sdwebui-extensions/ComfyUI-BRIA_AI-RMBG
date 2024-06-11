@@ -46,7 +46,7 @@ class BRIA_RMBG_ModelLoader_Zho:
         model_path = os.path.join(current_directory, "RMBG-1.4/model.pth")
         if not os.path.exists(model_path):
             if os.path.exists('/stable-diffusion-cache/models/RMBG-1.4/model.pth'):
-                os.system(f'cp /stable-diffusion-cache/models/RMBG-1.4/model.pth {model_path}')
+                model_path = '/stable-diffusion-cache/models/RMBG-1.4/model.pth'
         net.load_state_dict(torch.load(model_path, map_location=device))
         net.to(device)
         net.eval() 
